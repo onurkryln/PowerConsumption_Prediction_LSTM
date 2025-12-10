@@ -63,7 +63,7 @@ veri['hour_cos'] = np.cos(2 * np.pi * veri.index.hour / 24)
 fig, axes = plt.subplots(1, 2, figsize=(15, 6))
 
 # Saatlik Tüketim (Artık saatler 0-23 arası görünecek)
-sns.boxplot(x='hour', y='TotalPowerConsumption', data=veri, ax=axes[0])
+sns.boxplot(x='hour_sin', y='TotalPowerConsumption', data=veri, ax=axes[0])
 axes[0].set_title('Saatlik Tüketim Dağılımı')
 
 # Aylık Tüketim
@@ -243,4 +243,5 @@ plt.title('Güç Tüketimi Tahmini (Günlük)')
 plt.xlabel('Günler (Test Seti)')
 plt.ylabel('Tüketim (TotalPowerConsumption)')
 plt.legend()
+
 plt.show()
